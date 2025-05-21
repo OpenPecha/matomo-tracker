@@ -69,7 +69,8 @@ ReactDOM.render(
 
 When you call `createInstance(...)`, it internally creates a new `MatomoTracker` from the core JS library with these options. This will inject the Matomo script (`matomo.js`) into the page and apply all configurations. Ensure this code runs **in the browser** (client-side) – avoid calling it during server-side rendering. In a Next.js app, you might guard this with a `typeof window !== 'undefined'` check or initialize inside a `useEffect` to prevent SSR issues (since `document` is not available on the server).
 
-
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#:~:text=your%20Matomo%20details.-,Creating%20a%20Matomo%20Tracker%20Instance,-Before%20tracking%20anything)
 
 ---
 
@@ -101,6 +102,9 @@ trackPageView({
 * `documentTitle` **(string, optional)** — Override page title. Default: `document.title`.
 * `href` **(string, optional)** — Override URL. Default: `window.location.href`.
 * `customDimensions` **(array, optional)** — List of `{ id: number, value: string }`.
+
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#page-view-tracking:~:text=the%20component%20tree.-,Page%20View%20Tracking,-Page%20views%20are)
 
 ---
 
@@ -169,6 +173,9 @@ trackEvent({
 * `value` **(number, optional)** — Numerical value.
 * `customDimensions` **(array, optional)** — `{ id: number, value: string }` list.
 
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#page-view-tracking:~:text=for%20failed%20requests.-,Event%20Tracking,-Events%20in%20Matomo)
+
 ---
 
 ## 4. `trackEvents(options)`
@@ -195,6 +202,8 @@ trackEvents({
 
 * `delay` **(number, optional)** — ms before auto-binding. Default: library default.
 * `attributesPrefix` **(string, optional)** — Data-attribute prefix. Default: `'data-matomo-'`.
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#page-view-tracking:~:text=for%20easier%20analysis.-,Automatically%20Binding%20Event%20Listeners%20(Alternate%20Method),-If%20you%20prefer)
 
 ---
 
@@ -223,6 +232,8 @@ trackSiteSearch({
 * `keyword` **(string, required)** — Search term.
 * `category` **(string, optional)** — Search category.
 * `count` **(number, optional)** — Number of results.
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#page-view-tracking:~:text=and%20e%2Dcommerce.-,Site%20Search%20Tracking,-If%20your%20application)
 
 ---
 
@@ -246,7 +257,8 @@ enableLinkTracking({
 **Arguments**
 
 * `linkClasses` **(string\[], optional)** — Only track links with these CSS classes.
-
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#page-view-tracking:~:text=the%20Matomo%20reports.-,Outlink%20and%20Download%20Link%20Tracking,-Matomo%20can%20automatically)
 ---
 
 ## 7. `trackLink({ href, linkType, customDimensions })`
@@ -273,6 +285,8 @@ trackLink({
 * `linkType` **(string, required)** — `'download'`, `'link'`, or `'exit'`.
 * `customDimensions` **(array, optional)** — `{ id: number, value: string }` list.
 
+For more details, refer to:
+ [link](https://github.com/OpenPecha/matomo-tracker/wiki#page-view-tracking:~:text=the%20Matomo%20reports.-,Outlink%20and%20Download%20Link%20Tracking,-Matomo%20can%20automatically)!
 ---
 
 ## 8. `pushInstruction(instructionName, ...args)`
@@ -298,6 +312,9 @@ pushInstruction('setDocumentTitle', 'New Title');
 
 * `instructionName` **(string, required)** — Matomo API method (e.g., `'trackGoal'`).
 * `...args` **(any\[])** — Parameters for that API call.
+
+For more details, refer to:
+ [JavaScript Tracking Client](https://developer.matomo.org/guides/tracking-javascript-guide)
 
 ---
 
@@ -332,10 +349,19 @@ pushInstruction('setCustomDimension', 1, 'Member');
 
 * `index` **(number, required)** — Dimension slot in Matomo.
 * `value` **(string, required)** — Dimension value.
+For more details, refer to:
+- [User Identification (User ID)
+](https://github.com/OpenPecha/matomo-tracker/wiki#user-identification-user-id:~:text=important%20and%20numerous.-,User%20Identification%20(User%20ID),-Tracking%20a%20user)
+
+- [Custom Dimensions and Custom Variables](https://github.com/OpenPecha/matomo-tracker/wiki#user-identification-user-id:~:text=essentials%20of%20integration.-,Custom%20Dimensions%20and%20Custom%20Variables,-Matomo%20allows%20you)
 
 ---
 
 
+# For full user guide refer here:
+- [Matomo Tracker (React) – Comprehensive Developer Guide](https://github.com/OpenPecha/matomo-tracker/wiki)
+- [Matomo Tracker (React)](https://www.npmjs.com/package/@datapunt/matomo-tracker-react?activeTab=readme)
+- [Matamo - JavaScript Tracking Client](https://developer.matomo.org/guides/tracking-javascript-guide)
 
 
 
@@ -343,6 +369,10 @@ pushInstruction('setCustomDimension', 1, 'Member');
 
 
 
+<br>
+<br>
+<br>
+<br>
 
 
 
